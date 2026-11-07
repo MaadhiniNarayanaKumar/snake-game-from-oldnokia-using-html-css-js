@@ -24,12 +24,26 @@
   position: relative;
 }
 .center{
-  margin: 0px;
-  position: absolute;
-  top: 25%;
-  left: 110%;
+  margin: 24px;
+  position: static;
 }
 .page{
   background-color: black;
-  background-size: auto;
+  color: #b7f7c8;
+}
+.score{
+  margin: 10px 0;
+  color: #b7f7c8;
+}
+.message{
+  min-height: 1.2em;
+  margin: 8px 0;
+  color: #39ff14;
+}
+.start{
+  color: #39ff14;
+  background: transparent;
+  border: 1px solid #39ff14;
+  padding: 6px 12px;
+  cursor: pointer;
 }

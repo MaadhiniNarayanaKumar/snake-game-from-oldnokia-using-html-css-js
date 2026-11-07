@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const squares = document.querySelectorAll('.grid div')
     const scoreDisplay = document.querySelector('span')
     const startBtn = document.querySelector('.start')
+    const message = document.querySelector('.message')
   
     const width = 10
     let currentIndex = 0 //so first div in our grid
@@ -23,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
       randomApple()
       direction = 1
       scoreDisplay.innerText = score
+      message.textContent = ''
       intervalTime = 1000
       currentSnake = [2,1,0]
       currentIndex = 0
@@ -42,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         (currentSnake[0] - width < 0 && direction === -width) ||  //if snake hits the top
         squares[currentSnake[0] + direction].classList.contains('snake') //if snake goes into itself
       ) {
-          alert("GAME OVER")
+          message.textContent = 'GAME OVER'
         return clearInterval(interval) //this will clear the interval if any of the above happen
       }
   
@@ -77,8 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
    
     //assign functions to keycodes
     function control(e) {
-      squares[currentIndex].classList.remove('snake')
-  
       if(e.keyCode === 39) {
         direction = 1 //if we press the right arrow on our keyboard, the snake will go right one
       } else if (e.keyCode === 38) {
